@@ -25,6 +25,7 @@ module "network" {
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
+
 ## Requirements
 
 | Name | Version |
@@ -75,6 +76,7 @@ No resources.
 | virtual\_network\_name | Virtual Network name. |
 | vnet\_address\_space | Virtual Network address space. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 
 ## Run tests
 
