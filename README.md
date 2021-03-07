@@ -7,9 +7,24 @@ This module creates a Resource Group with Virtual Network and subnets.
 ## Usage
 
 ```hcl:examples/basic/main.tf
+provider "azurerm" {
+  features {}
+}
+
+module "network" {
+  source = "../.."
+
+  location             = "North Europe"
+  resource_group_name  = "rg-network-basic-example"
+  virtual_network_name = "vnet-network-basic-example"
+
+  address_space = ["10.0.0.0/16"]
+}
+
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Requirements
 
 | Name | Version |
@@ -60,6 +75,7 @@ No resources.
 | virtual\_network\_name | Virtual Network name. |
 | vnet\_address\_space | Virtual Network address space. |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
 ## Run tests
 
 ```bash
