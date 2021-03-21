@@ -28,3 +28,22 @@ module "vnet" {
 
   depends_on = [module.rg]
 }
+
+
+
+module "subnet" {
+  source  = "bcochofel/subnet/azurerm"
+  version = "1.3.1"
+
+  for_each = local.subnets
+
+  name                                           = each.value.name
+  address_prefixes                               = each.value.address_prefixes
+  enforce_private_link_endpoint_network_policies = each.value.enforce_private_link_endpoint_network_policies
+  enforce_private_link_service_network_policies  = each.value.enforce_private_link_service_network_policies
+  service_endpoints                              = each.value.service_endpoints
+  service_endpoint_policy_ids                    = each.value.service_endpoint_policy_ids
+
+  resource_group_name  = module.rg.name
+  virtual_network_name = module.vnet.name
+}
