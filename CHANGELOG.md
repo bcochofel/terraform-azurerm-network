@@ -4,12 +4,13 @@
 
 
 <a name="0.2.0"></a>
-## [0.2.0] - 2021-03-07
+## [0.2.0] - 2021-03-21
 ### Feat
 - rg and vnet modules
 
 ### Fix
 - missing vars for vnet module
+- **subnet:** remove tags
 
 ### Test
 - terratest for basic example
